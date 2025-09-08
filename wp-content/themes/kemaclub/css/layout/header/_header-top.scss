@@ -1,0 +1,62 @@
+.header {
+
+	&__top {
+		padding: 14px 0;
+		background: rgba(200, 200, 200, 0.2);
+		@include transition(.5s);
+
+		&-wrapper {
+			display: flex;
+			align-items: center;
+			color: $newcolor-1;
+
+			a {
+				@include menu-link;
+				margin-right: 20px;
+				font-weight: 500;
+
+				@include mobile {
+					margin-right: 15px;
+					font-size: 15px;
+				}
+			}
+		}
+
+		&-phone {
+			@include tablet {
+				display: none;
+			}
+		}
+
+		&-adress {
+			@include laptop {
+				display: none;
+			}
+		}
+
+		&-bots {
+    		margin-left: auto;
+
+			ul {
+				display: flex;
+				align-items: center;
+
+				li {
+					
+					a {
+						font-size: 0;
+						margin-right: 15px;
+
+						&:before {
+							font-size: 30px;
+						}
+					}
+				}
+			}
+
+			.icofont-telegram {
+				color: $tg-color;
+			}
+		}
+	}
+}

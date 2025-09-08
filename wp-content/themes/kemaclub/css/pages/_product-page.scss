@@ -1,0 +1,336 @@
+body {
+
+    .product-page {
+
+        &__top {
+            display: flex;
+            margin: 0 0 20px;
+
+                @include tablet {
+                    flex-direction: column;
+                }
+        }
+
+        &__media {
+            flex: 0 0 350px;
+            padding: 0 50px 0 0;
+
+                @include tablet {
+                    flex: 100%;
+                    padding: 0;
+                    margin: 0 0 20px;
+                }
+
+                .post {
+
+                    &-image {
+                        width: 100%;
+                    }
+
+                    &-no-image {
+                        display: flex;
+                        border-radius: 4px;
+                        background-color: $color-11;
+                        align-items: center;
+                        justify-content: center;
+                        height: 225px;
+                    }
+                }
+        }
+
+        &__attributes {
+            margin: 0 0 20px;
+            width: 100%;
+        }
+
+        &__attribute,
+        &__characteristics__row {
+            display: flex;
+            margin: 0 0 10px;
+            padding: 0 0 10px;
+            border-bottom: 1px solid $color-11;
+
+            &:last-of-type {
+                border: none;
+            }
+
+            @include tablet {
+                flex-direction: column;
+                padding: 10px;
+                margin: 0;
+            }
+
+            & > div {
+                flex-grow: 1;
+            }
+
+            &-label {
+                flex: 0 0 30%;
+                padding: 0 20px 0 0;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+
+                @include tablet {
+                    padding: 0;
+                }
+            }
+
+            &-value {
+                font-size: 16px;
+                color: $color-10;
+                line-height: 24px;
+                text-align: right;
+
+                @include tablet {
+                    text-align: left;
+                }
+            }
+        }
+
+        &__wholesale-order {
+            background-color: $color-13;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            
+            h3 {
+                @include h3;
+                margin: 0 0 20px;
+            }
+
+            p {
+                color: $color-1;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__tabs {
+            margin: 30px 0;
+
+            &-nav {
+                @include desktop {
+                    margin: 0 0 20px;
+                }
+
+                @include tablet {
+                    position: relative;
+                    bottom: -1px;
+                }
+
+                ul {
+                    display: flex;
+                    margin: 0 -10px;
+
+                    @include tablet {
+                        overflow-y: auto;
+                        margin: 0;
+                    }
+
+                    li {
+                        flex-grow: 1;
+                        margin: 0 10px;
+
+                        @include tablet {
+                            margin: 0;
+                        }
+
+                        button {
+                            @include btn-transparent;
+                            width: 100%;
+                            border: 1px solid #ebebeb;
+                            color: $color-10;
+                            white-space: nowrap;
+
+                            @include tablet {
+                                border-radius: 5px 5px 0 0;
+                                border-bottom: none;
+                            }
+
+                            &.active {
+                                background-color: rgba(127, 177, 0, 0.2);
+                                color: $color-1;
+
+                                @include tablet {
+                                    background-color: $color-13;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-panels {
+
+                @include tablet {
+                    border: 1px solid #ebebeb;
+                    border-radius: 0 0 5px 5px;
+                }
+            }
+
+            &-panel {
+                display: none;
+                @include typo-kit;
+
+                @include tablet {
+                    padding: 10px;
+                }
+
+                &.active {
+                    display: block;
+
+                    @include tablet {
+                        background-color: $color-13;
+                    }
+                }
+            }
+        }
+
+        &__storage-conditions {
+            background-color: $message-warning-bg;
+            padding: 15px 15px 15px 65px;
+            border-radius: 5px;
+            position: relative;
+            margin: 0 0 20px;
+
+            @include tablet {
+                padding: 10px;
+            }
+
+            &:before {
+                content: $icofont-info-circle;
+                font-family: $icon-font;
+                color: $message-warning-color;
+                font-size: 40px;
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translate(0, -50%);
+
+                @include tablet {
+                    display: none;
+                }
+            }
+
+            p {
+                margin: 0;
+
+                @include tablet {
+                    font-size: 16px;
+                }
+            }
+
+            strong {
+                font-size: 18px;
+                display: block;
+                margin: 0 0 10px;
+
+                @include tablet {
+                    display: flex;
+                    align-items: center;
+
+                    &:before {
+                        content: $icofont-info-circle;
+                        font-family: $icon-font;
+                        color: $message-warning-color;
+                        font-size: 30px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        &__tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 0 30px;
+
+                @include tablet {
+                    margin: 0 0 10px;
+                }
+
+                & > div {
+                    margin: 0 10px 10px 0;
+                }
+
+                a {
+                    display: inline-block;
+                    color: $color-2;
+                    background-color: $color-3;
+                    text-decoration: none;
+                    padding: 10px 16px;
+                    border-radius: 20px;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                        @include tablet {
+                            font-size: 12px;
+                            padding: 6px 12px;
+                        }
+
+                        &:before {
+                            content: '#';
+                            margin-right: 4px;
+                        }
+
+                        &:hover {
+                            background-color: $color-1;
+                        }
+                }
+        }
+
+        &__content-tab {
+            margin: 0 0 30px;
+
+            &-label {
+                font-size: 24px;
+                line-height: 36px;
+                margin: 0 0 20px;
+            }
+
+            &-value {
+                font-size: 18px;
+                color: $color-10;
+                line-height: 24px;
+
+                @include tablet {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        &__links {
+            margin: 0 0 20px;
+
+            a {
+                margin: 0 20px 0 0;
+                text-decoration: none;
+
+                    &:before {
+                        content:'\f019';
+                        display: inline-block;
+                        font-family: $awesome-font;
+                        font-weight: 300;
+                        margin: 0 5px 0 0;
+                    }
+
+                    &:hover {
+                        color: $color-1;
+                    }
+            }
+        }
+
+        &__request-btn {
+            margin-left: auto;
+            min-width: 150px;
+            
+            @include tablet {
+                margin: 15px 0 0;
+            }
+        }
+    }
+}

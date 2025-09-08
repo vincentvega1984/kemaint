@@ -1,0 +1,90 @@
+.search-form {
+    display: flex;
+
+    &-close {
+        @include close-modal($color-1, 2px);
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    @include tablet {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $color-2;
+        z-index: 16;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 60px 20px 20px;
+        @include transition(.3s);
+    }
+
+    input {
+        padding: 4px 12px;
+        height: 100%;
+
+        @include tablet {
+            padding: 7px 12px;
+            height: auto;
+        }
+    }
+
+    button {
+        margin-left: 15px;
+        padding: 10px 15px;
+
+        @include tablet {
+            padding: 11px 15px;
+        }
+
+        &:before{
+            content: '\f002';
+            font-family: $awesome-font;
+            font-weight: 300;
+        }
+    }
+}
+
+.search-success {
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    display: none;
+
+    .spin-loader {
+        @include spin-loader(8px solid $color-11, 8px solid $color-3, 40px, 40px);
+        top: calc(100% + 20px);
+    }
+
+    @include tablet {
+        
+        &.show {
+            display: block;
+        }
+    }
+}
+
+.search-field-wrapper {
+    width: 100%;
+}
+
+body.search-open {
+    overflow: hidden;
+
+    .search-form {
+        transform: translateY(0);
+    }
+}

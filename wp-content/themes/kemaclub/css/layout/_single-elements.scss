@@ -1,0 +1,21 @@
+// Sticky request form trigger
+
+.global-request-form-trigger {
+    background-color: $color-3;
+    color: $color-2;
+    display: inline-block;
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: rotate(-90deg) translateX(50%);
+    transform-origin: 100% 50%;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    @include transition(.3s);
+
+    &:hover {
+        background-color: $color-16;
+    }
+}

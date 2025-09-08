@@ -1,0 +1,96 @@
+.footer {
+    padding: 40px 0 0;
+    border-top: 1px solid $color-17;
+
+    &__wrapper {
+        display: flex;
+
+        @include laptop {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        line-height: 20px;
+
+        &-title {
+            color: $newcolor-1;
+            font-weight: 700;
+            margin: 0 0 16px;
+
+            @include desktop {
+                pointer-events: none;
+            }
+
+            @include laptop {
+
+                &.menu-title {
+                    position: relative;
+
+                    &::after {
+                        content: '\f078';
+                        font-family: $awesome-font;
+                        position: absolute;
+                        right: 24px;
+                        top: 50%;
+                        transform: translate(0,-50%);
+                        font-weight: 400;
+                        @include transition(.3s);
+                    }
+
+                    &.open {
+
+                        &:after {
+                            transform: translate(0, -50%) rotate(180deg);
+                        }
+
+                        & + .footer__column-menu {
+                            display: block;
+                        }
+                    }
+                }
+
+                & + .footer__column-menu {
+                    display: none;
+                }
+            }
+        }
+
+        &-desc {
+            margin: 0 0 20px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 80px;
+            
+            @include laptop {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            @include footer-link;
+            margin: 0 0 14px;
+            display: inline-block;
+
+            &.footer__logo {
+                margin: 0 0 20px;
+
+                img {
+                    max-width: 180px;
+                }
+            }
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+
+            &:not(:last-child) {
+                margin: 0 0 8px;
+            }
+        }
+    }
+}

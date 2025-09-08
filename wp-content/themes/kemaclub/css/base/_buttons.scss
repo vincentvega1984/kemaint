@@ -1,0 +1,52 @@
+@mixin btn {
+    font-size: 16px;
+    font-family: $font;
+    line-height: 1;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    @include transition(.3s);
+}
+
+@mixin btn-main {
+    @include btn;
+    color: $color-2;
+    background: $color-3;
+
+    &:hover {
+        background-color: $color-16;
+    }
+}
+
+@mixin btn-transparent {
+    @include btn;
+    color: $color-1;
+    background: transparent;
+
+    &:hover {
+        background: rgba(127, 177, 0, 0.2);
+    }
+}
+
+@mixin btn-reset {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn {
+    @include btn
+}
+
+.btn-main {
+    @include btn-main
+}

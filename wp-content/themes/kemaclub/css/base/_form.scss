@@ -1,0 +1,145 @@
+input:not([type="submit"]),
+textarea {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-10;
+    background-color: $color-2;
+    border: 1px solid $color-10;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    font-family: $font;
+
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+    }
+
+    &[aria-invalid="true"] {
+        border-color: $message-alert-color;
+    }
+}
+
+.wpcf7-form-control-wrap[data-name="your-phone"] {
+    position: relative;
+
+    input {
+        padding: 6px 12px 6px 45px;
+    }
+
+    &:before {
+        content: '';
+        width: 21px;
+        height: 14px;
+        background-image: url(images/russia.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+@mixin checkbox-reset {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0 5px 0 0;
+    position: relative;
+    top: 2px;
+}
+
+input[type="submit"] {
+    @include btn-main;
+}
+
+input[type="checkbox"] {
+    @include checkbox-reset;
+}
+
+@mixin message ($bg, $color, $brdr-color, $icon) {
+    position: relative;
+    margin: 0 0 20px;
+    padding: 10px 10px 10px 50px;
+    @include paragraph;
+    border-width: 0;
+    border-left-width: 4px;
+    border-color: $brdr-color;
+    color: $color;
+    background-color: $bg;
+
+    &::before {
+        content: $icon;
+        font-family: $icon-font;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        border: 1px solid;
+        border-radius: 50%;
+    }
+}
+
+
+@mixin message-alert {
+    @include message($message-alert-bg, $message-alert-color, $message-alert-border, $icofont-close-line)
+}
+
+@mixin message-success {
+    @include message($message-success-bg, $message-success-color, $message-success-border, $icofont-check-alt)
+}
+
+@mixin message-warning {
+    @include message($message-warning-bg, $message-warning-color, $message-warning-border, $icofont-exclamation)
+}
+
+@mixin form-messages {
+
+    &.invalid,
+    &.unaccepted {
+
+        .wpcf7-response-output {
+            @include message-warning;
+        }
+    }
+
+    &.sent {
+
+        .wpcf7-response-output {
+            @include message-success;
+        }
+    }
+
+    &.failed,
+    &.aborted {
+
+        .wpcf7-response-output {
+            @include message-alert;
+        }
+    }
+}
+
+.wpcf7-form {
+    @include form-messages();
+
+    &-control-wrap {
+        
+        .wpcf7-not-valid-tip {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .wpcf7-list-item {
+            margin: 0;
+        }
+    }
+}
+
+.wpcf7-response-output {
+    margin: 0;
+}

@@ -1,0 +1,238 @@
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../kemaclub/css/fonts/FontAwesome/fontawesome-webfont.eot');
+	src: url('../kemaclub/css/fonts/FontAwesome/fontawesome-webfont.eot') format('embedded-opentype'),
+		url('../kemaclub/css/fonts/FontAwesome/fontawesome-webfont.woff2') format('woff2'),
+		url('../kemaclub/css/fonts/FontAwesome/fontawesome-webfont.woff') format('woff'),
+		url('../kemaclub/css/fonts/FontAwesome/fontawesome-webfont.ttf') format('truetype'),
+		url('../kemaclub/css/fonts/FontAwesome/fontawesome-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../kemaclub/css/fonts/Gilroy/Gilroy-Regular.woff2') format('woff2'),
+        url('../kemaclub/css/fonts/Gilroy/Gilroy-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../kemaclub/css/fonts/Gilroy/Gilroy-Medium.woff2') format('woff2'),
+        url('../kemaclub/css/fonts/Gilroy/Gilroy-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../kemaclub/css/fonts/Gilroy/Gilroy-Bold.woff2') format('woff2'),
+        url('../kemaclub/css/fonts/Gilroy/Gilroy-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face { 
+    font-family: 'IcoFont';
+    font-weight: normal;
+    font-style: 'regular';
+    src: url("../kemaclub/css/fonts/Icofont/icofont.woff2") format("woff2"),
+    url("../kemaclub/css/fonts/Icofont/icofont.woff") format("woff");
+}
+
+$font: 'Gilroy', sans-serif;
+$icon-font: 'IcoFont';
+$awesome-font: 'FontAwesome';
+
+strong {
+	font-weight: 700;
+}
+
+@mixin paragraph {
+	font-size: 18px;
+	line-height: 24px;
+	color: $color-10;
+	margin: 0 0 15px;
+}
+
+@mixin h1 {
+    font-size: 36px;
+    line-height: 48px;
+
+    @include mobile {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+
+@mixin h2 {
+    font-size: 32px;
+    line-height: 44px;
+
+    @include mobile {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@mixin h3 {
+    font-size: 28px;
+    line-height: 38px;
+}
+
+@mixin h4 {
+    font-size: 20px;
+	line-height: 30px;
+}
+
+@mixin menu-link {
+	color: $newcolor-1;
+	text-decoration: none;
+
+	&:hover {
+		color: $color-3;
+	}
+}
+
+@mixin accent-link {
+	color: $color-3;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+@mixin footer-link {
+	color: $color-1;
+	text-decoration: none;
+	line-height: 20px;
+
+	&:hover {
+		color: $color-3;
+	}
+}
+
+@mixin table {
+    margin: 30px 0;
+    border-collapse: collapse;
+
+    tbody {
+
+        td {
+            border: 1px solid $color-9;
+            padding: 15px;
+        }
+    }
+}
+
+@mixin ol-nested-numeric {
+    @include paragraph;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: item;
+
+    & > li {
+        margin: 0 0 10px;
+        counter-increment: item;
+        @include h4;
+
+        &::before {
+            content: counters(item, ".") ". ";
+        }
+
+        & > ol {
+            margin: 30px 0 30px 15px;
+			list-style: inside;
+        }
+    }
+
+    ol > li {
+        @include paragraph;
+
+        &::marker {
+            color: $color-3;
+            content: counters(list-item, '.') '. ';
+        }
+
+        & > ul {
+            margin-left: 15px;
+        }
+    }
+
+    li table tr {
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+
+            td {
+                border: none;
+            }
+        }
+    }
+}
+
+@mixin ul {
+
+    li {
+        font-size: 18px;
+        color: $color-10;
+        line-height: 24px;
+        margin: 0 0 10px;
+        padding: 0 0 0 30px;
+        position: relative;
+
+        &:before {
+            content: '\f046';
+            font-family: $awesome-font;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            color: $color-3;
+        }
+    }
+}
+
+.maincontent {
+	
+	p {
+		@include paragraph;
+	}
+}
+
+@mixin typo-kit {
+
+    p {
+		@include paragraph;
+	}
+
+    a {
+        @include accent-link;
+    }
+
+    ul {
+        @include ul;
+    }
+
+    h2 {
+        @include h2;
+        margin: 20px 0;
+    }
+
+    h3 {
+        @include h3;
+        margin: 20px 0;
+    }
+
+    h4 {
+        @include h4;
+        margin: 20px 0;
+    }
+}

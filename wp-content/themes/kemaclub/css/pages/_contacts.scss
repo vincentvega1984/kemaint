@@ -1,0 +1,10 @@
+.contact-emails {
+    background-color: $color-13;
+    padding: 20px 20px 5px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+
+    @include tablet {
+        gap: 0;
+    }
+}

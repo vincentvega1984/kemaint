@@ -1,0 +1,100 @@
+.header-top {
+
+	.container {
+		position: relative;
+	}
+
+	.search-trigger {
+		display: none;
+		margin: 0 20px 0 auto;
+		text-align: right;
+		color: $color-9;
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 40px;
+		cursor: pointer;
+		@include transition(.3s);
+
+		.search-button:before {
+			content: '\f002';
+			font-family: $awesome-font;
+			color: $color-2;
+			font-size: 16px;
+			line-height: 40px;
+			margin: 0 0 0 12px;
+
+			@include laptop {
+				line-height: 36px;
+			}
+		}
+
+		&:hover {
+			opacity: .8;
+		}
+
+		@include tablet {
+			display: block;
+			margin: 0 20px 0 0;
+		}
+
+		@include mobile {
+			font-size: 0;
+		}
+	}
+
+	.search-block {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 40px;
+		width: 380px;
+		height: 34px;
+		background: $color-2;
+
+		@include laptop {
+			right: 10px;
+		}
+
+		@include mobile {
+			width: 300px;
+		}
+
+		&.open {
+			display: block;
+		}
+
+		#searchform>div {
+			display: flex;
+		}
+
+		label {
+			display: none;
+		}
+
+		input[type="submit"] {
+			background-color: $color-3;
+			border: none;
+			color: #fff;
+			padding: 0 25px;
+			font-family: $font;
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		input[type="text"] {
+			padding: 0 10px;
+			line-height: 34px;
+			border: none;
+			font-size: 14px;
+			background: $color-2;
+			font-family: $font;
+			font-weight: 700;
+			color: $color-9;
+			width: 100%;
+
+			@include tablet {
+				background: #efefef;
+			}
+		}
+	}
+}

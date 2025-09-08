@@ -1,0 +1,17 @@
+.maincontent {
+	padding: 30px 0 0;
+
+	@include tablet {
+		padding-top: 20px;
+	}
+
+	.container {
+		@include tablet {
+			position: relative;
+		}
+	}
+}
+
+.content-block {
+	width: 100%;
+}

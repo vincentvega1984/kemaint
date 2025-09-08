@@ -1,0 +1,105 @@
+.content-block .page {
+	padding: 0 0 20px;
+}
+
+.page {
+
+	&.page-id-8991 {
+		.breadcrumbs {
+			display: none;
+		}
+
+		.article-page p {
+			color: $color-1;
+		}
+	}
+
+	.article-page {
+
+		.post-image {
+			float: left;
+			width: 175px;
+			margin: 0 15px 15px 0;
+
+			@include mobile {
+				margin: 0 0 15px;
+				float: none;
+				width: 100%;
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		a {
+			color: $color-3;
+			font-weight: 700;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		ul {
+			@include ul;
+			margin: 10px 0 0;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		h1 {
+			@include h1;
+			margin: 0 0 20px;
+		}
+
+		h2 {
+			@include h2;
+			margin: 0 0 20px;
+		}
+
+		h3 {
+			@include h3;
+			margin: 0 0 20px;
+		}
+
+		h4 {
+			@include h4;
+			margin: 0 0 20px;
+		}
+
+		h4+ul {
+			margin-bottom: 20px;
+		}
+
+		p {
+
+			& + h1,
+			& + h2,
+			& + h3,
+			& + h4 {
+				margin-top: 30px;
+			}
+		}
+
+		.wp-block-image {
+			margin: 0 0 20px;
+		}
+
+		strong {
+			font-weight: 700;
+		}
+
+		ol.nested-numeric {
+			@include ol-nested-numeric;
+
+			table {
+				@include table;
+				@include paragraph;
+			}
+		}
+	}
+}

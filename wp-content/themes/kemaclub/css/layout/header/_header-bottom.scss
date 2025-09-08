@@ -1,0 +1,63 @@
+.header {
+
+	&__bottom {
+		padding: 14px 0;
+
+		@include laptop {
+			display: none;
+		}
+
+		&-wrapper {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.btn-main {
+			display: flex;
+			padding: 12px;
+
+			.burger{
+				@include burger(16px, $color-2);
+				margin-right: 10px;
+
+				@include desktop-s {
+					margin-right: 0;
+				}
+			}
+
+			&.active .burger {
+				@include burger-active;
+			}
+
+			@include desktop-s {
+				font-size: 0;
+				padding: 12px;
+			}
+		}
+
+		&-menu {
+
+			ul.menu {
+				display: inline-flex;
+				align-items: center;
+				background: rgba(127, 177, 0, 0.1);
+				border-radius: 5px;
+
+				a {
+                    @include btn-transparent;
+					padding: 13px 10px;
+					font-size: 15px;
+					font-weight: 500;
+
+					@include desktop-s {
+						font-size: 13px;
+					}
+                }
+
+				li.current-menu-item  a {
+					background: rgba(127, 177, 0, 0.2);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+@mixin transition($transition) {
+	-webkit-transition: all $transition ease-out;
+	-moz-transition: all $transition ease-out;
+	-ms-transition: all $transition ease-out;
+	-o-transition: all $transition ease-out;
+	transition: all $transition ease-out;
+}
+
+$container-width: 1230px;
+
+$desktop-width: 1024px;
+$tablet-width: 768px;
+$mobile-landscape-width: 480px;
+
+@mixin container {
+	max-width: $container-width;
+	width: 100%;
+	margin: 0 auto;
+}
+
+@mixin mobile {
+	@media only screen and (max-width: #{$mobile-landscape-width}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media only screen and (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media only screen and (max-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin desktop-s {
+	@media (min-width: #{$desktop-width}) and (max-width: #{$container-width}) {
+		@content;
+	}
+}
+
+@mixin custom-scrollbar {
+	/*FF*/
+	scrollbar-width: thin;
+	scrollbar-color: $color-3 $color-13;
+	/*IE*/
+	scrollbar-base-color: $color-3;
+	scrollbar-face-color: $color-3;
+	scrollbar-3dlight-color: $color-2;
+	scrollbar-highlight-color: $color-2;
+	scrollbar-track-color: transparent;
+	scrollbar-arrow-color: $color-2;
+	scrollbar-shadow-color: $color-2;
+	scrollbar-dark-shadow-color: transparent;
+}

@@ -1,0 +1,76 @@
+.page .entry-content.faq {
+
+    h3 {
+        margin: 30px 0;
+    }
+
+    h5 {
+        padding: 20px 60px 20px 24px;
+        background-color: $color-13;
+        border-bottom: 1px solid $color-2;
+        position: relative;
+        cursor: pointer;
+
+            &:hover {
+                background-color: $color-14;
+            }
+
+            &::after {
+                content: '\f078';
+                font-family: $awesome-font;
+                position: absolute;
+                right: 24px;
+                top: 50%;
+                transform: translate(0,-50%);
+            }
+
+            &.open {
+                background-color: $color-14;
+
+                &:after {
+                    transform: translate(0,-50%) rotate(180deg);
+                }
+            }
+
+            &.open + div.faq-content {
+                display: block;
+            }
+    }
+
+    div.faq-content {
+        margin: 0;
+        padding: 20px 24px;
+        display: none;
+        font-size: 18px;
+        color: $color-10;
+        line-height: 24px;
+
+        @include tablet{
+            font-size: 16px;
+            line-height: 20px;
+        };
+    }
+
+    table {
+        margin: 10px 0;
+        width: 100%;
+
+        tr:nth-child(even) {
+            background-color: $color-13;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ebebeb;
+            
+            &:first-child {
+                white-space: nowrap;
+            }
+
+            @include tablet{
+                font-size: 16px;
+                line-height: 20px;
+            };
+        }
+    }
+}
