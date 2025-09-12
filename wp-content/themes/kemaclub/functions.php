@@ -247,7 +247,7 @@ function foo_modify_query_order( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
         return;
     }
-	if ( !is_category('stati') && !is_category('novosti')) {
+	if ( !is_category('news')) {
         $query->set( 'orderby', 'title' );
         $query->set( 'order', 'ASC' );
 	}
