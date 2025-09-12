@@ -22,28 +22,6 @@ textarea {
     }
 }
 
-.wpcf7-form-control-wrap[data-name="your-phone"] {
-    position: relative;
-
-    input {
-        padding: 6px 12px 6px 45px;
-    }
-
-    &:before {
-        content: '';
-        width: 21px;
-        height: 14px;
-        background-image: url(images/russia.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: block;
-        position: absolute;
-        left: 12px;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-}
-
 @mixin checkbox-reset {
     display: inline-block;
     width: auto;

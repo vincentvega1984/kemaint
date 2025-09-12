@@ -1,6 +1,6 @@
 <?php if (get_theme_mod('address_setting', false)) : ?>
     <div class="footer__column-title">
-        <?php echo 'Наш офис' ?>
+        <?php echo 'Office adress' ?>
     </div>
     <div class="footer__column-desc">
         <?php echo get_theme_mod('address_setting'); ?>
@@ -8,7 +8,7 @@
 <?php endif; ?>
 <?php if (get_theme_mod('jobtime_setting', false)) : ?>
     <div class="footer__column-title">
-        <?php echo 'Режим работы офиса' ?>
+        <?php echo 'Office hours' ?>
     </div>
     <div class="footer__column-desc">
         <?php echo get_theme_mod('jobtime_setting'); ?>

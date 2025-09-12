@@ -23,7 +23,6 @@
             <button class="btn-main request-form-trigger">
                 <?php echo 'Ask for prices' ?>
             </button>
-            <button class="btn-main mobile-search-trigger"></button>
             <button class="header__main-burger">
                 <span></span>
                 <span></span>

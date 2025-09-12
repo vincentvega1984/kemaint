@@ -63,11 +63,15 @@
         }
 
         &:not(:last-child) {
-            margin-right: 80px;
+            margin-right: 60px;
             
             @include laptop {
                 margin-right: 0;
             }
+        }
+
+        &:last-child {
+            margin-left: auto;
         }
 
         a {

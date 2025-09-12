@@ -27,7 +27,7 @@ if ($related_query->have_posts()) :
 ?>
 <div class="related-products">
     <div class="related-products__title">
-        <?php echo 'Похожие товары'; ?>
+        <?php echo 'Related products'; ?>
     </div>
     
     <div class="related-products__grid">

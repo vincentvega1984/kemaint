@@ -137,7 +137,7 @@ function get_tags_in_cat($cat_id) {
 }
 
 function replace_excerpt($content) {
-	return str_replace('Continue Reading', '<a href="'. get_permalink() .'">Читать далее</a>',
+	return str_replace('Continue Reading', '<a href="'. get_permalink() .'">Read more</a>',
 	$content ); 
 }
 add_filter('the_excerpt', 'replace_excerpt');

@@ -2,7 +2,7 @@
 
 <?php
 	$current_category = get_queried_object();
-	$posts_categories = ['stati', 'novosti'];
+	$posts_categories = ['news'];
 ?>
 
 <?php if (in_array($current_category->slug, $posts_categories)) : ?>

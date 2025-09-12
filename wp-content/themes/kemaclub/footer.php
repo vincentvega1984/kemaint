@@ -6,7 +6,7 @@
 			</div>
 			<div class="footer__column">
 				<div class="footer__column-title menu-title">
-					<?php echo 'Товары' ?>
+					<?php echo 'Products' ?>
 				</div>
 				<div class="footer__column-menu">
 					<?php wp_nav_menu(array('theme_location' => 'catalog-menu'));?>
@@ -14,7 +14,15 @@
 			</div>
 			<div class="footer__column">
 				<div class="footer__column-title menu-title">
-					<?php echo 'Информация' ?>
+					<?php echo 'Information' ?>
+				</div>
+				<div class="footer__column-menu">
+					<?php wp_nav_menu(array('theme_location' => 'mega-menu'));?>
+				</div>
+			</div>
+			<div class="footer__column">
+				<div class="footer__column-title menu-title">
+					<?php echo 'For foreign clients' ?>
 				</div>
 				<div class="footer__column-menu">
 					<?php wp_nav_menu(array('theme_location' => 'footer-menu'));?>

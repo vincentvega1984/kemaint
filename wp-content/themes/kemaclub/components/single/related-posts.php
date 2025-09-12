@@ -28,7 +28,7 @@ if ($related_query->have_posts()) :
 
 <div class="cross-posts">
     <div class="cross-posts__title">
-        <?php echo 'Вам также может быть интересно'; ?>
+        <?php echo 'You may also be interested in'; ?>
     </div>
     <ul>
         <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>

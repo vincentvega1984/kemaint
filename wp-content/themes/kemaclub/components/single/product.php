@@ -47,62 +47,13 @@
                     <?php } ?>
 
                     <button class="product-page__request-btn btn-main request-form-trigger">
-                        <?php echo 'Купить' ?>
+                        <?php echo 'Ask for price' ?>
                     </button>
                 </div>
             </div>
 
-            <?php if (get_theme_mod('wholesale_order_setting', false)) : ?>
-                <div class="product-page__wholesale-order">
-                    <h3><?php echo 'Оптовый заказ' ?></h3>
-                    <?php echo get_theme_mod('wholesale_order_setting'); ?>
-                </div>
-            <?php endif; ?>
-
             <div class="product-page__bottom">
-                <div class="product-page__tabs">
-                    <nav class="product-page__tabs-nav">
-                        <ul>
-                            <li>
-                                <button data-tab="1" class="active">
-                                    <?php echo 'Описание' ?>
-                                </button>
-                            </li>
-                            <li>
-                                <button data-tab="2">
-                                    <?php echo 'Характеристики' ?>
-                                </button>
-                            </li>
-                            <li>
-                                <button data-tab="3">
-                                    <?php echo 'Доставка и оплата' ?>
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="product-page__tabs-panels">
-                        <div class="product-page__tabs-panel active" data-panel="1">
-                            <?php the_content(); ?>
-                        </div>
-                        <div class="product-page__tabs-panel" data-panel="2">
-                            <?php get_template_part('components/single/product-characteristics-tab'); ?>
-                        </div>
-                        <div class="product-page__tabs-panel" data-panel="3">
-                            <?php $embedded_post_id = get_theme_mod('embedded_post_id', '');
-                                if ($embedded_post_id) {
-                                    $post = get_post($embedded_post_id);
-                                    if ($post) {
-                                        echo apply_filters('the_content', $post->post_content);
-                                    } else {
-                                        echo '<p>Запись о Доставке и оплате не найдена</p>';
-                                    }
-                                } else {
-                                    echo '<p>Запись о Доставке и оплате не выбрана</p>';
-                                }
-                            ?>
-                        </div>
-                    </div>
-                </div>
+                <?php the_content(); ?>
             </div>
             <?php if ( is_singular() ) :
                 echo get_the_tag_list(
