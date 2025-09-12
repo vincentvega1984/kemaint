@@ -1749,39 +1749,22 @@ body.filters-open .maincontent.has-tags .category-page-tags {
       box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.15); }
     .related-categories__item a {
       display: flex;
+      flex-direction: column;
       align-items: center;
       text-decoration: none;
       color: #212121;
       font-weight: 500;
       width: 100%;
       height: 100%;
-      padding: 16px 58px 16px 16px;
+      padding: 16px;
       position: relative; }
-      .related-categories__item a::after {
-        content: '\f054';
-        font-family: "FontAwesome";
-        font-size: 10px;
-        display: block;
-        width: 26px;
-        height: 26px;
-        line-height: 26px;
-        text-align: center;
-        border-radius: 50%;
-        background-color: #ffffff;
-        color: #05A551;
-        border: 1px solid #05A551;
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        transform: translateY(-50%); }
-  .related-categories__image {
-    display: flex;
-    flex: 0 0 32px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px; }
-    .related-categories__image img {
-      max-width: 32px; }
+  .related-categories__image img {
+    max-width: 100%;
+    border-radius: 5px; }
+  .related-categories__item-title {
+    width: 100%;
+    margin-top: 16px;
+    text-align: center; }
   .related-categories__title {
     font-size: 32px;
     line-height: 44px;
@@ -2027,39 +2010,22 @@ body.home .mainpage-catalog-link-title {
       box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.15); }
     .maincontent .listing-wrapper.products .categories__item a {
       display: flex;
+      flex-direction: column;
       align-items: center;
       text-decoration: none;
       color: #212121;
       font-weight: 500;
       width: 100%;
       height: 100%;
-      padding: 16px 58px 16px 16px;
+      padding: 16px;
       position: relative; }
-      .maincontent .listing-wrapper.products .categories__item a::after {
-        content: '\f054';
-        font-family: "FontAwesome";
-        font-size: 10px;
-        display: block;
-        width: 26px;
-        height: 26px;
-        line-height: 26px;
-        text-align: center;
-        border-radius: 50%;
-        background-color: #ffffff;
-        color: #05A551;
-        border: 1px solid #05A551;
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        transform: translateY(-50%); }
-  .maincontent .listing-wrapper.products .categories__image {
-    display: flex;
-    flex: 0 0 32px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px; }
-    .maincontent .listing-wrapper.products .categories__image img {
-      max-width: 32px; }
+  .maincontent .listing-wrapper.products .categories__image img {
+    max-width: 100%;
+    border-radius: 5px; }
+  .maincontent .listing-wrapper.products .categories__item-title {
+    width: 100%;
+    margin-top: 16px;
+    text-align: center; }
 .maincontent .listing-wrapper.products .listing-posts .post-wrap {
   display: flex;
   align-items: center;
