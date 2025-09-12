@@ -1913,8 +1913,7 @@ body.home .mainpage-catalog-link-title {
     font-size: 20px;
     line-height: 28px;
     display: block;
-    margin: 20px 0 25px;
-    font-weight: 300; }
+    margin: 20px 0 5px; }
     .category-page .post-wrap .post-title a {
       text-decoration: none;
       color: #212121; }
@@ -1967,6 +1966,7 @@ body.home .mainpage-catalog-link-title {
     padding: 7px 0;
     width: 30px;
     font-weight: 700;
+    border-radius: 50%;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;

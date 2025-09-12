@@ -47,6 +47,7 @@
 				padding: 7px 0;
 				width: 30px;
 				font-weight: 700;
+				border-radius: 50%;
 				@include transition(.3s);
 
 				@include mobile {

@@ -24,9 +24,6 @@
 													<?php the_title(); ?>
 												</a>
 											</h2>
-											<div class="news-date">
-												<?=get_the_date('d.m.Y')?>
-											</div>
 											<div class="post-content">
 												<?php the_excerpt(); ?>
 											</div>
