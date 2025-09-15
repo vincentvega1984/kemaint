@@ -185,7 +185,3 @@ window.addEventListener('load', () => {
         });
     });
 })
-
-document.addEventListener( 'wpcf7mailsent', () => {
-	location = 'https://kemaclub.ru/spasibo/';
-}, false );
