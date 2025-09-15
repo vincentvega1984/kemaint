@@ -16,8 +16,7 @@ window.addEventListener('load', () => {
         modalClose = document.querySelector('.modal__close'),
         filtersTrigger = document.querySelector('.category-page-tags__trigger'),
         filtersClose = document.querySelector('.category-page-tags .close'),
-        scrollButton = document.querySelector('.scroll-top'),
-        tabs = document.querySelectorAll('[data-tab]');
+        scrollButton = document.querySelector('.scroll-top')
 
     // Main menu mobile
 
@@ -167,21 +166,6 @@ window.addEventListener('load', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
-        });
-    });
-
-    // Tabs
-    
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const targetPanel = document.querySelector(`[data-panel="${tab.dataset.tab}"]`);
-
-            document.querySelectorAll('[data-tab], [data-panel]').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            tab.classList.add('active');
-            targetPanel.classList.add('active');
         });
     });
 })
