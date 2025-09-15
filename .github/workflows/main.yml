@@ -1,5 +1,5 @@
 on: push
-name: 🚀 Deploy website to prod on push
+name: 🚀 Deploy website to staging.kemafrance.com on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -14,5 +14,5 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /kemafrance.com/public_html/
+        server-dir: /staging.kemafrance.com/public_html/
         
