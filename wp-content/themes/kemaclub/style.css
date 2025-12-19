@@ -1407,8 +1407,9 @@ body.search-open {
       @media only screen and (max-width: 1024px) {
         .footer__column:not(:last-child) {
           margin-right: 0; } }
-    .footer__column:last-child {
-      margin-left: auto; }
+    @media only screen and (min-width: 1024px) {
+      .footer__column:last-child {
+        margin-left: auto; } }
     .footer__column a {
       color: #212121;
       text-decoration: none;
@@ -1823,7 +1824,9 @@ body.home .wp-block-columns figure {
   border-radius: 5px;
   overflow: hidden; }
   body.home .wp-block-columns figure a {
-    position: relative; }
+    position: relative;
+    display: block;
+    font-size: 0; }
     body.home .wp-block-columns figure a::before {
       content: '';
       width: 100%;
