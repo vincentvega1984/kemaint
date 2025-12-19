@@ -71,7 +71,10 @@
         }
 
         &:last-child {
-            margin-left: auto;
+            
+            @include desktop {
+                margin-left: auto;
+            }
         }
 
         a {
